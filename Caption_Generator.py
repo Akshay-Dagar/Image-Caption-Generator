@@ -1,14 +1,8 @@
 import numpy as np
 import pandas as pd
-import cv2
-import os
-import matplotlib.pyplot as plt
 from keras.applications.resnet50 import ResNet50,preprocess_input,decode_predictions
 from keras.layers import GlobalAvgPool2D,Input,Dense,Dropout,Embedding,LSTM,Add
 from keras.models import Model,load_model
-from keras.utils import to_categorical
-from keras.callbacks import ModelCheckpoint
-from tqdm import tqdm_notebook
 from keras.preprocessing import sequence
 import pickle
 import tensorflow as tf

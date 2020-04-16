@@ -1,7 +1,6 @@
 numpy
 pandas
 scikit-learn
-tensorflow==1.15.0
 keras
 Click==7.0
 Flask==1.1.1

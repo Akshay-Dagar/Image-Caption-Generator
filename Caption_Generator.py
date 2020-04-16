@@ -5,7 +5,6 @@ from keras.layers import GlobalAvgPool2D,Input,Dense,Dropout,Embedding,LSTM,Add
 from keras.models import Model,load_model
 from keras.preprocessing import sequence
 import pickle
-import tensorflow as tf
 import keras
 
 session=tf.Session()

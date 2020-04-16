@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image_Caption_Bot</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<style type="text/css">
+		.heading{
+			color: red;
+			font-weight: 100;
+			font-size: 4em;
+			text-shadow: 1px 1px 5px black;
+			text-align: center;
+		}
+		.jumbotron{
+			background-color: rgb(255,227,248);
+		}
+		.text{
+			font-size: 32px;
+			font-style: italic;
+			text-align: center;
+		}
+		img{
+			height: 40%;
+			width: 50%;
+			margin-left: 22.5%;
+			margin-right:25%;
+		}
+		h6{
+			font-size: 22px;
+			text-align: center;
+			color: red;
+		}
+		body{
+			text-align: center;
+			background-color: rgb(255,229,227)
+		}
+		form{
+			margin-left: 30%;
+			margin-right:25%;
+			width: 50%;
+		}
+		.cap{
+			margin-left: 25%;
+			margin-right:25%;
+			margin-top: 2%;
+		}
+		.form-control{
+			background-color: rgb(255,229,227);
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron">
+			<div class="container">
+
+				<h1 class="heading">Image Caption Bot</h1>
+				<br>
+				<h6>A simple tool to Generate Captions for Images that you can Upload!</h6>
+
+			</div>
+		</div>
+
+		<form method="POST" action="/" enctype="multipart/form-data" class="form-inline">
+
+			<input type="file" name="photo" placeholder="Choose an Image" class="form-control">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+		<br>
+		<br>
+
+		{%if predictions%}
+
+		<div class="row">
+
+			<img src="{{predictions['image']}}">
+
+			<div class="cap">
+
+				<p class="text">Generated Caption:</p>
+				<h3><i>{{predictions['generated_caption']}}</i></h2>
+
+			</div>
+
+		</div>
+
+		{%endif%}
+
+	</div>
+</body>
+</html>
